@@ -1,14 +1,14 @@
 import dotenv from "dotenv";
-import { ChatOpenAI } from "@langchain/openai";
+import { OpenAI } from "@langchain/openai";
 
 dotenv.config();
 
-const llm = new ChatOpenAI({
-  modelName: "gpt-4o-mini",
+const llm = new OpenAI({
+  modelName: "gpt-3.5-turbo-instruct",
 });
 
 const response = await llm.invoke(
-  "Describe the importance of learning generative AI for javascript developers in 50 words for korean."
+  "Describe the importance of learning generative AI for javascript developers in 50 words."
 );
 
 console.log(response);
